@@ -32,16 +32,16 @@ export default function Navbar() {
                                     <div className="flex space-x-4">
                                         {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                                         <a
-                                            href="#"
+                                            href="/dashboard"
                                             className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                                         >
                                             Dashboard
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/dashboard/distributors"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                         >
-                                            Team
+                                            Distributors
                                         </a>
                                         <a
                                             href="#"

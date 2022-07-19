@@ -2,17 +2,17 @@ import { useSession } from 'next-auth/react';
 import Navbar from '../../components/navbar';
 import List from '../../components/list';
 import { connect } from 'mongoose';
-import User from '../../models/User';
+import Distributor from '../../models/Distributor';
 import NoPermission from '../../components/noPermission'
 
-export default function Dashboard({ users }) {
+export default function Dashboard({ distributors }) {
     const { data: session, status } = useSession();
 
     if (status === 'authenticated' && session.role === 'ADMIN') {
         return (
             <div>
                 <Navbar />
-                <List users={users} />
+                <List users={distributors} />
                 <p>Signed in as {session.email}</p>
             </div>
         );
@@ -23,22 +23,20 @@ export default function Dashboard({ users }) {
 
 export async function getServerSideProps(context) {
     await connect(process.env.MONGODB_URI);
-    const data = await User.find();
-    const users = data.map((user) => {
+    const data = await Distributor.find();
+    const distributors = data.map((distributor) => {
         return {
-            first_name: user.first_name,
-            last_name: user.last_name,
-            email: user.email,
-            work_phone: user.work_phone,
-            cell_phone: user.cell_phone,
-            active: user.active.toString().toUpperCase(),
-            role: user.role,
+            name: distributor.name,
+            territory: distributor.territory,
+            location: distributor.location,
+            credit_status: distributor.credit_status,
+            balance: distributor.balance,
         };
     });
 
     return {
         props: {
-            users,
+            distributors,
         },
     };
 }

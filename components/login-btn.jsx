@@ -5,15 +5,19 @@ export default function LoginBtn() {
     if (status === 'authenticated') {
         return (
             <>
-                Signed in as {session.email} <br />
-                <button onClick={() => signOut()}>Sign out</button>
+                <button
+                    className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"
+                    onClick={() => signOut()}
+                >
+                    Sign out
+                </button>
             </>
         );
     }
     return (
         <>
-            Not signed in <br />
             <button
+                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"
                 onClick={() =>
                     signIn(undefined, {
                         callbackUrl: '/dashboard',
