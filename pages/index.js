@@ -105,16 +105,17 @@ export default function Home() {
                                 className="relative flex items-center justify-between sm:h-10 md:justify-center"
                                 aria-label="Global"
                             >
-                                <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+                                <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0 lg:relative">
                                     <div className="flex items-center justify-between w-full md:w-auto">
                                         <a href="#">
                                             <span className="sr-only">
                                                 Masterpiece Fireplaces
                                             </span>
-                                            <img
-                                                className="h-8 w-auto sm:h-10"
-                                                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                                                alt=""
+                                            <Image
+                                                src={'/masterpiecelogo-web.png'}
+                                                width="920"
+                                                height="64"
+                                                className=""
                                             />
                                         </a>
                                         <div className="-mr-2 flex items-center md:hidden">
@@ -141,7 +142,7 @@ export default function Home() {
                                         </a>
                                     ))}
                                 </div>
-                                <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+                                <div className="hidden md:relative md:flex md:items-center md:justify-end md:inset-y-0 md:left-10">
                                     <span className="inline-flex rounded-md shadow">
                                         <LoginBtn />
                                     </span>
