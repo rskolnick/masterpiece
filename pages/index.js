@@ -9,10 +9,10 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 export default function Home() {
     const navigation = [
-        { name: 'Products', href: '#' },
-        { name: 'Contact Us', href: '#' },
-        { name: 'Our Partners', href: '#' },
-        { name: 'About Us', href: '#' },
+        { name: 'Fireplaces', href: '#' },
+        { name: 'Decorative Trims', href: '#' },
+        { name: 'Showrooms', href: '#' },
+        { name: 'Contact', href: '/contact' },
     ];
     return (
         <div className={styles.container}>
@@ -107,7 +107,7 @@ export default function Home() {
                             >
                                 <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0 lg:relative">
                                     <div className="flex items-center justify-between w-full md:w-auto">
-                                        <a href="#">
+                                        <a href="/">
                                             <span className="sr-only">
                                                 Masterpiece Fireplaces
                                             </span>
