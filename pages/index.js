@@ -33,7 +33,7 @@ export default function Home() {
                     <div className="relative h-full max-w-7xl mx-auto">
                         <svg
                             className="absolute right-full transform translate-y-1/4 translate-x-1/4 lg:translate-x-1/2"
-                            width={404}
+                            width={404.0}
                             height={784}
                             fill="none"
                             viewBox="0 0 404 784"
